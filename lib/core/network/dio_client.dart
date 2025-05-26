@@ -8,18 +8,17 @@ class DioClient {
   late final Dio _dio;
   DioClient(): _dio = Dio(
     BaseOptions(
-      baseUrl: ApiUrl.baseURL  ,
+      baseUrl: ApiUrl.baseURL,
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
-        'User-Agent': 'Mozilla/5.0',
       },
       responseType: ResponseType.json,
       sendTimeout: const Duration(seconds: 10),
       receiveTimeout: const Duration(seconds: 10)
     ),
-  )..interceptors.addAll([AuthorizationInterceptor(),LoggerInterceptor()]);
+  )..interceptors.addAll([AuthorizationInterceptor(), LoggerInterceptor()]);
 
-  // GET METHOD
+  // GET METHOD 
   Future < Response > get(
     String url, {
       Map < String,
