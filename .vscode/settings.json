@@ -1,0 +1,6 @@
+{
+  "[dart]": {
+    "editor.defaultFormatter": "Dart-Code.dart-code"
+  },
+  "dart.flutterSdkPaths": ["/Users/yangxs/Tools/flutter_3.32.0"]
+}

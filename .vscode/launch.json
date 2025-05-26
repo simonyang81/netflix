@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "netflix",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": [
+        "--web-port",
+        "5000",
+        "-d",
+        "Cedar's iPhone"         // 测试手机
+        // "iPhone 16 Pro Max"   // 模拟器
+        // "141fd9a2"  // 在 args 中指定设备
+      ]
+    },
+    {
+      "name": "netflix (profile mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "netflix (release mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    }
+  ]
+}
