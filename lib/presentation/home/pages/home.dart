@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:netflix/common/widgets/appbar/app_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:netflix/presentation/home/widgets/now_playing_movies.dart';
 
 import '../../../common/widgets/text/category_text.dart';
 import '../../../core/constants/app_vectors.dart';
-import 'trending_movies.dart';
+import '../widgets/trending_movies.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -26,6 +27,11 @@ class HomePage extends StatelessWidget {
             CategoryText(title: 'Trendings 🔥'),
             const SizedBox(height: 10),
             TrendingMoviePage(),
+            const SizedBox(height: 20),
+            CategoryText(title: 'Now Playing 🎬'),
+            const SizedBox(height: 10),
+            NowPlayingMovie(page: 1,),
+            SizedBox(height: 50,),
 
           ],
         ),

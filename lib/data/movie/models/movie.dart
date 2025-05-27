@@ -1,5 +1,5 @@
-class TrendingMovieModel {
-    TrendingMovieModel({
+class MovieModel {
+    MovieModel({
         required this.adult,
         required this.backdropPath,
         required this.genreIds,
@@ -31,8 +31,8 @@ class TrendingMovieModel {
     final double? voteAverage;
     final int? voteCount;
 
-    factory TrendingMovieModel.fromJson(Map<String, dynamic> json){ 
-        return TrendingMovieModel(
+    factory MovieModel.fromJson(Map<String, dynamic> json){ 
+        return MovieModel(
             adult: json["adult"],
             backdropPath: json["backdrop_path"],
             genreIds: json["genre_ids"] == null ? [] : List<int>.from(json["genre_ids"]!.map((x) => x)),

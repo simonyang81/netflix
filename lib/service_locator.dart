@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:logger/web.dart';
+import 'package:netflix/domain/movie/usecases/get_now_playing_movies.dart';
 
 import 'core/network/dio_client.dart';
 import 'data/movie/repositories/movie.dart';
@@ -20,5 +21,6 @@ void setupServiceLocator() {
   sl.registerSingleton<MovieRepository>(MovieRepositoryImpl());
 
   sl.registerSingleton<GetTrendingMoviesUseCase>(GetTrendingMoviesUseCase());
+  sl.registerSingleton<GetNowPlayingMoviesUseCase>(GetNowPlayingMoviesUseCase());
 
 }

@@ -10,9 +10,10 @@
         "--web-port",
         "5000",
         "-d",
-        "Cedar's iPhone"         // 测试手机
-        // "iPhone 16 Pro Max"   // 模拟器
-        // "141fd9a2"  // 在 args 中指定设备
+        "Cedar's iPhone"      // 测试手机
+        // "Simon's iPhone"      // 我的手机
+        // "iPhone 16 Pro Max"   // iPhone 16 Pro Max 模拟器
+        // "141fd9a2"  // 我的安卓测试机
       ]
     },
     {

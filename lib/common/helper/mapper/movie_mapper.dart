@@ -1,10 +1,10 @@
-import '../../../data/movie/models/trending_movie.dart';
-import '../../../domain/movie/entities/trending_movie.dart';
+import '../../../data/movie/models/movie.dart';
+import '../../../domain/movie/entities/movie.dart';
 
 class MovieMapper {
 
-  static TrendingMovieEntity toEntity4TrendingMovie(TrendingMovieModel model) {
-    return TrendingMovieEntity(
+  static MovieEntity toEntity4Movie(MovieModel model) {
+    return MovieEntity(
       adult: model.adult,
       backdropPath: model.backdropPath,
       genreIds: model.genreIds,

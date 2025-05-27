@@ -1,5 +1,5 @@
-class TrendingMovieEntity {
-    TrendingMovieEntity({
+class MovieEntity {
+    MovieEntity({
         required this.adult,
         required this.backdropPath,
         required this.genreIds,
