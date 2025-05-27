@@ -28,28 +28,25 @@ class MovieCredit extends StatelessWidget {
         }
 
         if (state is DataLoaded<List<CreditEntity>>) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('演员和工作人员', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
-                SizedBox(height: 10,),
-                SizedBox(
-                  height: 180,
-                  child: ListView.separated(
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      return CreditCard(credit: state.data[index]);
-                    }, 
-                    separatorBuilder: (context, index) {
-                      return SizedBox(width: 10,);
-                    }, 
-                    itemCount: state.data.length
-                  ),
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('演员和工作人员', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+              SizedBox(height: 10,),
+              SizedBox(
+                height: 180,
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return CreditCard(credit: state.data[index]);
+                  }, 
+                  separatorBuilder: (context, index) {
+                    return SizedBox(width: 10,);
+                  }, 
+                  itemCount: state.data.length
                 ),
-              ],
-            ),
+              ),
+            ],
           );
         }
 
