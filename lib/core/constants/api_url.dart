@@ -10,4 +10,6 @@ class ApiUrl {
   static const person = '${baseURL}person/{person_id}';
   static const personMovies = '${baseURL}person/{person_id}/movie_credits';
 
+  static const trendingTVs = '${baseURL}trending/tv/week';
+
 }

@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:netflix/common/bloc/generic_data_cubit.dart';
-import 'package:netflix/common/widgets/text/category_text.dart';
 
 import '../../../common/widgets/appbar/app_bar.dart';
-import '../../../domain/person/entities/person.dart';
-import '../../../domain/person/usecases/get_person.dart';
-import '../../../service_locator.dart';
 import '../cubit/personal_movies_cubit.dart';
 import '../widgets/credit_infotmation.dart';
 import '../widgets/personal_movies.dart';
