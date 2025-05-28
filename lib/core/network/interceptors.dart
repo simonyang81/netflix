@@ -42,3 +42,55 @@ class AuthorizationInterceptor extends Interceptor {
     handler.next(options); // continue with the Request
   }
 }
+
+/// 网络请求重试拦截器
+/// 在网络请求失败时自动重试
+class RetryInterceptor extends Interceptor {
+  final int maxRetries;
+  final Duration retryDelay;
+  final Logger _logger = Logger();
+
+  RetryInterceptor({
+    this.maxRetries = 3,
+    this.retryDelay = const Duration(seconds: 1),
+  });
+
+  @override
+  void onError(DioException err, ErrorInterceptorHandler handler) async {
+    final extra = err.requestOptions.extra;
+    final retryCount = extra['retryCount'] ?? 0;
+
+    if (retryCount < maxRetries && _shouldRetry(err)) {
+      _logger.w('网络请求失败，正在重试... (${retryCount + 1}/$maxRetries)');
+      
+      // 等待一段时间后重试
+      await Future.delayed(retryDelay * (retryCount + 1));
+      
+      // 更新重试次数
+      err.requestOptions.extra['retryCount'] = retryCount + 1;
+      
+      try {
+        // 重新发起请求
+        final response = await Dio().fetch(err.requestOptions);
+        handler.resolve(response);
+        return;
+      } catch (e) {
+        // 如果重试也失败了，继续处理错误
+        _logger.e('重试失败: $e');
+      }
+    }
+
+    // 如果达到最大重试次数或不应该重试，则继续处理错误
+    handler.next(err);
+  }
+
+  /// 判断是否应该重试
+  bool _shouldRetry(DioException err) {
+    return err.type == DioExceptionType.connectionTimeout ||
+           err.type == DioExceptionType.receiveTimeout ||
+           err.type == DioExceptionType.sendTimeout ||
+           err.type == DioExceptionType.connectionError ||
+           (err.response?.statusCode != null && 
+            err.response!.statusCode! >= 500);
+  }
+}

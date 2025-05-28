@@ -34,7 +34,7 @@ class MovieCredit extends StatelessWidget {
               Text('演员和工作人员', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
               SizedBox(height: 10,),
               SizedBox(
-                height: 180,
+                height: 220,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {

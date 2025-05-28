@@ -19,19 +19,21 @@ class WatchMoviePage extends StatelessWidget {
       appBar: BasicAppbar(
         title: Text(movie.title ?? '', style: TextStyle(overflow: TextOverflow.ellipsis, fontSize: 16, fontWeight: FontWeight.bold),),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
-            children: [
-              VideoPlayer(movieId: movie.id!),
-              const SizedBox(height: 10,),
-              ReleaseDay(movie: movie),
-              const SizedBox(height: 10),
-              MovieOverview(overview: movie.overview ?? ''),
-              const SizedBox(height: 20,),
-              MovieCredit(movieId: movie.id!),
-            ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Column(
+              children: [
+                VideoPlayer(movieId: movie.id!),
+                const SizedBox(height: 10,),
+                ReleaseDay(movie: movie),
+                const SizedBox(height: 10),
+                MovieOverview(overview: movie.overview ?? ''),
+                const SizedBox(height: 20,),
+                MovieCredit(movieId: movie.id!),
+              ],
+            ),
           ),
         ),
       ),

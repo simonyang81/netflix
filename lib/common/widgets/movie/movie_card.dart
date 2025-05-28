@@ -4,6 +4,7 @@ import 'package:netflix/core/configs/assets/app_images.dart';
 
 import '../../../domain/movie/entities/movie.dart';
 import '../../../presentation/watch/pages/watch_movie.dart';
+import '../images/cached_image.dart';
 
 class MovieCard extends StatelessWidget {
   final MovieEntity movie;
@@ -22,20 +23,16 @@ class MovieCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+
             Expanded(
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image: NetworkImage(
-                      '${AppImages.movieImageBasePath}${movie.posterPath}',
-                    ),
-                  ),
-                  borderRadius: BorderRadius.circular(10),
-                ),
+              child: CachedImage(
+                imageUrl: '${AppImages.movieImageBasePath}${movie.posterPath}',
+                width: double.infinity,
+                fit: BoxFit.fill,
+                borderRadius: BorderRadius.circular(10),
               ),
             ),
+
             SizedBox(height: 10),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
