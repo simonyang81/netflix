@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:netflix/common/helper/navigation/app_navigation.dart';
 import 'package:netflix/core/configs/assets/app_images.dart';
 import 'package:netflix/domain/movie/entities/credit.dart';
 
+import '../../../presentation/credit/pages/credit.dart';
 import '../images/cached_image.dart';
 
 class CreditCard extends StatelessWidget {
@@ -13,6 +15,7 @@ class CreditCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        AppNavigator.push(context, CreditPage(personId: credit.id!));
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,7 +33,7 @@ class CreditCard extends StatelessWidget {
             fit: BoxFit.cover,
             borderRadius: BorderRadius.circular(10),
           ),
-          
+
           SizedBox(height: 10),
 
           /**

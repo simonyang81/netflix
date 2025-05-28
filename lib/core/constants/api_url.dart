@@ -7,4 +7,6 @@ class ApiUrl {
   static const video = '${baseURL}movie/{movie_id}/videos';
   static const movieCredits = '${baseURL}movie/{movie_id}/credits';
 
+  static const person = '${baseURL}person/{person_id}';
+
 }
