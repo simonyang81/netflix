@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:netflix/presentation/watch/pages/watch_tv.dart';
 
 import '../../../core/configs/assets/app_images.dart';
 import '../../../domain/tv/entities/tv.dart';
+import '../../helper/navigation/app_navigation.dart';
 import '../images/cached_image.dart';
 
 class TVCard extends StatelessWidget {
@@ -14,7 +16,7 @@ class TVCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // AppNavigator.push(context, WatchMoviePage(movie: movie));
+        AppNavigator.push(context, WatchTVPage(tv: tv));
       },
       child: SizedBox(
         width: 180,

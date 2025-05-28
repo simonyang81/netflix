@@ -1,7 +1,8 @@
 import 'package:dartz/dartz.dart';
 
-import '../entities/tv.dart';
-
 abstract class TVRepository {
-  Future<Either<String, List<TVEntity>>> getTrendingTVs();
+  Future<Either> getTrendingTVs();
+  Future<Either> getTVVideo(int tvId);
+  Future<Either> getTVSeriesDetail(int tvId);
+  Future<Either> getTVCredits(int tvId);
 }

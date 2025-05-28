@@ -18,6 +18,9 @@ import 'domain/person/usecases/get_person.dart';
 import 'domain/person/usecases/get_personal_movies.dart';
 import 'domain/tv/repositories/tv.dart';
 import 'domain/tv/usecases/get_trending_tv.dart';
+import 'domain/tv/usecases/get_tv_credits.dart';
+import 'domain/tv/usecases/get_tv_series_detail.dart';
+import 'domain/tv/usecases/get_tv_video.dart';
 
 final sl = GetIt.instance;
 
@@ -42,5 +45,8 @@ void setupServiceLocator() {
   sl.registerSingleton<GetPersonUseCase>(GetPersonUseCase());
   sl.registerSingleton<GetPersonalMoviesUseCase>(GetPersonalMoviesUseCase());
   sl.registerSingleton<GetTrendingTVsUseCase>(GetTrendingTVsUseCase());
+  sl.registerSingleton<GetTVVideoUseCase>(GetTVVideoUseCase());
+  sl.registerSingleton<GetTVSeriesDetailUseCase>(GetTVSeriesDetailUseCase());
+  sl.registerSingleton<GetTVCreditslUseCase>(GetTVCreditslUseCase());
 
 }

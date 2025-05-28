@@ -11,5 +11,8 @@ class ApiUrl {
   static const personMovies = '${baseURL}person/{person_id}/movie_credits';
 
   static const trendingTVs = '${baseURL}trending/tv/week';
+  static const tvVideo = '${baseURL}tv/{series_id}/videos';
+  static const tvSeriesDetail = '${baseURL}tv/{series_id}';
+  static const tvCredits = '${baseURL}tv/{series_id}/credits';
 
 }

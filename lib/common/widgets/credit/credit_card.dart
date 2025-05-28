@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netflix/common/helper/navigation/app_navigation.dart';
 import 'package:netflix/core/configs/assets/app_images.dart';
-import 'package:netflix/domain/movie/entities/credit.dart';
+import 'package:netflix/domain/person/entities/credit.dart';
 
 import '../../../presentation/credit/pages/credit.dart';
 import '../images/cached_image.dart';

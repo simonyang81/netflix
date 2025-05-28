@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:netflix/common/bloc/generic_data_cubit.dart';
-import 'package:netflix/common/widgets/credit/credit_card.dart';
-import 'package:netflix/domain/movie/usecases/get_movie_credits.dart';
 
+import '../../../common/bloc/generic_data_cubit.dart';
+import '../../../common/widgets/credit/credit_card.dart';
 import '../../../domain/person/entities/credit.dart';
+import '../../../domain/tv/usecases/get_tv_credits.dart';
 import '../../../service_locator.dart';
 
-class MovieCredit extends StatelessWidget {
-  final int movieId;
+class TVCredits extends StatelessWidget {
+  final int tvId;
 
-  const MovieCredit({super.key, required this.movieId});
+  const TVCredits({super.key, required this.tvId});
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => GenericDataCubit()
         ..getData<List<CreditEntity>, int>(
-          sl<GetMovieCreditsUseCase>(),
-          params: movieId,
+          sl<GetTVCreditslUseCase>(),
+          params: tvId,
         ),
 
       child: BlocBuilder<GenericDataCubit, GenericDataState>(

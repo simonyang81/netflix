@@ -1,5 +1,5 @@
-import '../../../data/movie/models/credit.dart';
-import '../../../domain/movie/entities/credit.dart';
+import '../../../data/person/models/credit.dart';
+import '../../../domain/person/entities/credit.dart';
 
 class CreditMapper {
 
@@ -13,7 +13,6 @@ class CreditMapper {
       originalName: model.originalName,
       popularity: model.popularity,
       profilePath: model.profilePath,
-      castId: model.castId,
       character: model.character,
       creditId: model.creditId,
       order: model.order,

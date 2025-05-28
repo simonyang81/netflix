@@ -1,11 +1,11 @@
 import 'package:dartz/dartz.dart';
 import 'package:netflix/common/helper/mapper/credit_mapper.dart';
-import 'package:netflix/data/movie/models/credit.dart';
+import 'package:netflix/data/person/models/credit.dart';
 import 'package:netflix/data/movie/sources/movies.dart';
 
 import '../../../common/helper/mapper/movie_mapper.dart';
 import '../../../common/helper/mapper/video_mapper.dart';
-import '../../../domain/movie/entities/credit.dart';
+import '../../../domain/person/entities/credit.dart';
 import '../../../domain/movie/repositories/movie.dart';
 import '../../../service_locator.dart';
 import '../models/movie.dart';
