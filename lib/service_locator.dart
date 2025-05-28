@@ -13,6 +13,7 @@ import 'domain/movie/usecases/get_movie_credits.dart';
 import 'domain/movie/usecases/get_trending_movies.dart';
 import 'domain/movie/usecases/get_video.dart';
 import 'domain/person/usecases/get_person.dart';
+import 'domain/person/usecases/get_personal_movies.dart';
 
 final sl = GetIt.instance;
 
@@ -33,5 +34,6 @@ void setupServiceLocator() {
   sl.registerSingleton<GetVideoUseCase>(GetVideoUseCase());
   sl.registerSingleton<GetMovieCreditsUseCase>(GetMovieCreditsUseCase());
   sl.registerSingleton<GetPersonUseCase>(GetPersonUseCase());
+  sl.registerSingleton<GetPersonalMoviesUseCase>(GetPersonalMoviesUseCase());
 
 }

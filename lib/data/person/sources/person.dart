@@ -8,6 +8,7 @@ import '../../../service_locator.dart';
 
 sealed class PersonService {
   Future<Either> getPerson({required int personId});
+  Future<Either> getPersonalMovies({required int personId});
 }
 
 final class PersonApiServiceImpl extends PersonService {
@@ -30,6 +31,27 @@ final class PersonApiServiceImpl extends PersonService {
       return Left('获取人员信息出错');
     }
 
+  }
+  
+  @override
+  Future<Either> getPersonalMovies({required int personId}) async {
+
+    try {
+
+      var response = await sl<DioClient>().get(
+        ApiUrl.personMovies.replaceAll('{person_id}', personId.toString()),
+        queryParameters: {
+          'language': 'zh-CN',
+        },
+      );
+
+      return Right(response.data);
+
+    } on DioException catch(e) {
+      sl<Logger>().e('获取人员相关电影列表出错: $e');
+      return Left('获取人员相关电影列表出错');
+    }
+    
   }
 
 }
